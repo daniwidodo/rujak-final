@@ -1,0 +1,7 @@
+{
+  "name": "rujak-final",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
