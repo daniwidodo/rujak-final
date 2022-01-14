@@ -1,9 +1,49 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>homepage</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content >
+  <div class="header">
+    <ion-toolbar >
 
-<ion-content>
+      <h1 style="padding-left: 5%; color: orange;">Welcome!</h1>
+      <ion-buttons slot="end">
+
+        <ion-button routerLink="/search">
+          <ion-icon slot="icon-only" name="search" style="color: orange;"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+
+
+  </div>
+
+  <div
+    class="card"
+    style="
+      width: 90vw;
+
+      background-color: orange;
+      border-radius: 10px;
+      margin-left: 5%;
+      margin-right: 5%;
+      margin-bottom: 5%;
+      margin-top: 5%;
+      padding: 8px;
+    "
+    *ngFor="let post of posts"
+    (click)="goToPostDetails(post.id)"
+
+  >
+    <div
+
+    [ngStyle]="{background: 'url(' + post.x_featured_media_medium + ') center center fixed'}"
+      style="height: 20vh; background-size: cover; border-radius: 10px;"
+    >
+
+  </div>
+    <div style="padding-bottom: 20px">
+      <h4>{{post.title.rendered}}</h4>
+      <p style="font-style: italic;">by {{post._embedded.author[0].name}}</p>
+    </div>
+  </div>
+
+<section id="separator" style="height: 10vh;"></section>
 
 </ion-content>

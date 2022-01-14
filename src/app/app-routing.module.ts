@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'homepage',
     pathMatch: 'full'
   },
   {
@@ -20,7 +20,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/search/search.module').then( m => m.SearchPageModule)
   },
   {
-    path: 'post-details',
+    path: 'post-details/:postId',
     loadChildren: () => import('./pages/post-details/post-details.module').then( m => m.PostDetailsPageModule)
   },
 ];

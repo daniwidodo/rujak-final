@@ -1,9 +1,58 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>search</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
+  <div>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="homepage"></ion-back-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </div>
 
+  <div
+    id="search-bar"
+    style="
+      margin-left: 5%;
+      padding-left: 2%;
+      margin-right: 5%;
+      border: lightgrey solid 1px;
+      border-radius: 20px;
+    "
+  >
+    <ion-input type="text" placeholder="Pencarian" type="text" (ionChange)='getSearchQuery($event)'></ion-input>
+  </div>
+
+  <!--  -->
+  <div id="search-result">
+    <div id="no-result" *ngIf="noData" >
+      <h5 style="text-align: center;">Tidak ditemukan!</h5>
+    </div>
+
+    <!--  -->
+
+    <div *ngIf="adaData" >
+      <div *ngFor="let post of posts" (click)="goToPostDetails(post.id)">
+        <ion-grid fixed>
+          <ion-row>
+            <ion-col size="3">
+              <div
+              [ngStyle]="{background: 'url(' + post._embedded.self[0].x_featured_media_medium + ') center center fixed'}"
+            style="
+              height: 80px;
+              width: 80px;
+              background-color: brown;
+              border-radius: 10px;
+            "
+          ></div>
+            </ion-col>
+            <ion-col size="8">
+              <div id="title-result" >
+                <h5>{{post.title}}</h5>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+      </div>
+
+    </div>
+  </div>
 </ion-content>
