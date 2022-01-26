@@ -1,31 +1,33 @@
 <ion-content>
-  <div id="header">
+  <div id="header" >
     <ion-toolbar>
-      <ion-buttons slot="start">
-        <ion-back-button defaultHref="homepage"></ion-back-button>
+      <ion-buttons slot="start" >
+        <ion-back-button defaultHref="homepage" >  </ion-back-button>
       </ion-buttons>
-      <ion-buttons slot="end">
+      <!-- <ion-buttons slot="end">
         <ion-button (click)="shareData()">
           <ion-icon slot="icon-only" name="share"></ion-icon>
         </ion-button>
-      </ion-buttons>
+      </ion-buttons> -->
     </ion-toolbar>
   </div>
+  <div
+  class="featured-image"
+  style="
+    width: 100%;
+    height: 40vh;
+    background-color: cornflowerblue;
+    position: ;
+    
+  "
+  [ngStyle]="{background: 'url(' + postImage + ') center / contain no-repeat'}"
+></div>
 
   <div
     id="content"
     style="padding-left: 5%; padding-right: 5%; padding-bottom: 20%"
   >
-    <div
-      class="featured-image"
-      style="
-        width: 90vw;
-        height: 40vh;
-        background-color: cornflowerblue;
-        border-radius: 10px;
-      "
-      [ngStyle]="{background: 'url(' + postImage + ') center center fixed'}"
-    ></div>
+
 
     <div class="author">
 
@@ -36,12 +38,13 @@
               <div
           class="author-avatar"
           style="
-            height: 60px;
+            height: 40px;
             background-color: aquamarine;
-            width: 60px;
-            border-radius: 10px;
+            width: 40px;
+            border-radius: 50%;
+            
           "
-          [ngStyle]="{background: 'url(' + authorIvatar + ') center'}"
+          [ngStyle]="{background: 'url(' + authorIvatar + ') center / contain no-repeat'}"
         ></div>
             </ion-col>
             <ion-col size="8">
